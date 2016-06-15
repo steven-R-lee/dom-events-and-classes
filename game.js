@@ -13,6 +13,7 @@ function bindEventListeners (dots) {
     // The first one is provided for you
     dots[i].addEventListener('contextmenu', makeGreen)
     dots[i].addEventListener('click', makeBlue)
+    dots[i].addEventListener('dbclick', makeInvisible)
   }
 }
 
@@ -31,6 +32,12 @@ function makeBlue (evt) {
 }
 
 // CREATE FUNCTION hide HERE
+
+function makeInvisible (evt) {
+//evt.preventDefault()
+  evt.target.classList.toggle('invisible')
+  updateCounts()
+}
 
 function updateCounts () {
   var totals = {
